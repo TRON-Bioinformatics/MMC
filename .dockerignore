@@ -1,0 +1,34 @@
+# VCS
+.git
+.gitattributes
+.gitignore
+
+# Build artifacts (also gitignored) - keep the context clean
+bin/
+include/
+*.o
+
+# Docs, benchmarks, tests - not needed to build the binaries
+doc/
+benchmark/
+tests/
+*.pdf
+
+# Windows / macOS build inputs (unused by the Linux Makefile)
+*.vcxproj
+*.vcxproj.*
+kmc.sln
+*.dylib
+*.lib
+
+# Vendored third-party sources - we link the prebuilt .a archives instead
+*.tar.gz
+kmc_tools/libs/zlib-1.2.11/
+kmc_tools/libs/bzip2-1.0.6/
+
+# Python API (not part of `make all`)
+py_kmc_api/
+
+# Docker files themselves
+Dockerfile
+.dockerignore
